@@ -1,0 +1,24 @@
+{
+  "questions": {
+    "1": {
+      "text": "Find the value of x",
+      "answer": "42",
+      "max-marks": "2"
+    },
+    "2": {
+      "text": "Find the value of x",
+      "answer": "42",
+      "max-marks": "2"
+    }
+  },
+
+  "tips": {
+    "1": {
+      "text": "Did you know that the sky is blue."
+    }
+  },
+
+  "videos": {
+
+  }
+}
