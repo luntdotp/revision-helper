@@ -8,12 +8,13 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script>
     var qs = TAFFY();
-    qs.insert({id:1,type:"phys", q:"Define velocity.", a:"The rate of displacement in a given direction", marks:1});
+    qs.store("qs");
+    //qs.insert({id:1,type:"phys", q:"Define velocity.", a:"The rate of displacement in a given direction", marks:1});
   </script>
 </head>
 <body>
   <div id="content">
-    <div id="stats">Questions Today: 4 | Percentage Today: 40% | Total Questions: 37 | Total Percentage: 73%</div>
+    <div id="stats">Questions Today: 4 | Percentage Today: 40% | Total Questions: 37 | Total Percentage: 73%</div> <!-- This is just a placeholder, all the values are meaningless. -->
     <div id="questionText">What is the value of X?</div>
     <div id="questionMarks">[3 Marks]</div>
     <br />
@@ -25,6 +26,12 @@
 </html>
 
 <script>
-  document.getElementById("questionText").innerHTML = qs({id:1}).first().q.toString();
-  document.getElementById("questionMarks").innerHTML = "[" + qs({id:1}).first().marks.toString() + " marks]";
+function selectQuestion(){
+    var qcount = qs().count();
+    var randnum = Math.floor(Math.random() * (qs().count())) + 1;
+    document.getElementById("questionText").innerHTML = qs({id:randnum}).first().q.toString();
+    document.getElementById("questionMarks").innerHTML = "[" + qs({id:randnum}).first().marks.toString() + " marks]";
+}
+
+selectQuestion();
 </script>
